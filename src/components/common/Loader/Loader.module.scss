@@ -1,0 +1,53 @@
+.loaderContainer {
+  position: relative;
+  animation: containerRotation 15s linear infinite;
+  transform-origin: center;
+}
+
+.loader {
+  width: 96px;
+  height: 96px;
+  display: inline-block;
+  position: relative;
+  transform: translateY(4%);
+}
+
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 70px solid #555555;
+  position: absolute;
+  left: 8px;
+  top: 13.36px;
+  animation: loaderAnimation 3s linear infinite;
+  transform-origin: center;
+}
+
+.loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes loaderAnimation {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(15%);
+    opacity: 0;
+  }
+}
+
+@keyframes containerRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
