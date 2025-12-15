@@ -1,16 +1,15 @@
-import styles from "./Header.module.scss";
+import styles from './Header.module.scss';
+import HeaderLink from './HeaderLink/HeaderLink';
 
-interface IHeaderProps {}
-
-const Header = ({}: IHeaderProps) => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <HeaderLink href="/">Home</HeaderLink>
         </li>
         <li>
-          <a href="/roadmap">Roadmap</a>
+          <HeaderLink href="/roadmap">Roadmap</HeaderLink>
         </li>
       </ul>
     </header>

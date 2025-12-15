@@ -1,0 +1,20 @@
+.articleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1.2rem 1rem;
+  color: var(--black);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+
+  & h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+  }
+
+  & p {
+    margin: 0;
+  }
+}

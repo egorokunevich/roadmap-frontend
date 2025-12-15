@@ -1,4 +1,4 @@
-import { useEffect, type PropsWithChildren } from 'react';
+import { type PropsWithChildren } from 'react';
 import { useConnectionService } from '../../../services/useConnectionService';
 import styles from './ConnectionProvider.module.scss';
 import Loader from '../Loader/Loader';
@@ -7,10 +7,6 @@ import Loader from '../Loader/Loader';
 // This component checks if the server is awake
 const ConnectionProvider = ({ children }: PropsWithChildren) => {
   const { isServerAwake, isError } = useConnectionService();
-
-  useEffect(() => {
-    console.log({ isServerAwake });
-  }, [isServerAwake]);
 
   const handleConnection = () => {
     if (isError) {

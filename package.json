@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node -e \"const required = '18.0.0'; const current = process.version.slice(1); if (parseFloat(current) < parseFloat(required)) { console.error('❌ Node.js версия ' + current + ' меньше требуемой ' + required); process.exit(1); }\"",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

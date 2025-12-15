@@ -1,0 +1,23 @@
+.headerLink {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #00000000;
+    left: 0;
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+    transition: background-color 0.3s ease, transform 0.2s ease 0.1s;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(-10px) translateY(-50%);
+      background-color: var(--black);
+    }
+  }
+}

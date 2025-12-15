@@ -1,53 +1,44 @@
-.loaderContainer {
-  position: relative;
-  animation: containerRotation 15s linear infinite;
-  transform-origin: center;
-}
-
 .loader {
-  width: 96px;
-  height: 96px;
-  display: inline-block;
-  position: relative;
-  transform: translateY(4%);
+  height: 40px;
+  aspect-ratio: 0.866;
+  display: grid;
+  background: conic-gradient(
+    from -121deg at right,
+    #0000,
+    rgba(24, 24, 24, 0.3) 1deg 60deg,
+    #0000 61deg
+  );
+  animation: l12 5s infinite linear;
+  transform-origin: 33% 50%;
 }
-
-.loader::after,
-.loader::before {
+.loader:before,
+.loader:after {
   content: '';
-  box-sizing: border-box;
-  width: 0;
-  height: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  border-top: 70px solid #555555;
-  position: absolute;
-  left: 8px;
-  top: 13.36px;
-  animation: loaderAnimation 3s linear infinite;
-  transform-origin: center;
+  grid-area: 1/1;
+  background: conic-gradient(
+    from -121deg at right,
+    #0000,
+    rgba(24, 24, 24, 0.6) 1deg 60deg,
+    #0000 61deg
+  );
+  transform-origin: inherit;
+  scale: 0.9;
+  animation: inherit;
 }
+.loader:after {
+  // Третий треугольник
 
-.loader::after {
-  animation-delay: 1s;
+  background: conic-gradient(
+    from -121deg at right,
+    #0000,
+    rgba(24, 24, 24, 0) 1deg 60deg,
+    #0000 61deg
+  );
+  scale: 0.5;
+  animation-duration: 6s;
 }
-
-@keyframes loaderAnimation {
-  0% {
-    transform: scale(0) translateY(0);
-    opacity: 1;
-  }
+@keyframes l12 {
   100% {
-    transform: scale(1) translateY(15%);
-    opacity: 0;
-  }
-}
-
-@keyframes containerRotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+    transform: rotate(1turn);
   }
 }
